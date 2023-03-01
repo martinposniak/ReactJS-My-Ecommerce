@@ -12,10 +12,10 @@ const ItemList = ({raquetas}) => {
             key={raqueta.id}
             id={raqueta.id}
             name={raqueta.name}
-            description={raqueta.description}
             price={raqueta.price}
             category={raqueta.category}
             img={raqueta.img}
+            stock={raqueta.stock}
             />
         })}
     </div>

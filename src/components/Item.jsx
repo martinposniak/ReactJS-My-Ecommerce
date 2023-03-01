@@ -3,7 +3,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-const Item = ({id, name, img, category, price}) => {
+const Item = ({id, name, img, category, price, stock}) => {
   return (
     <div>
         <div key={id}>
@@ -16,6 +16,9 @@ const Item = ({id, name, img, category, price}) => {
         </Card.Text>
         <Card.Text>
             Precio: {price}
+        </Card.Text>
+        <Card.Text>
+            Stock: {stock}
         </Card.Text>
         <Button variant="primary">
             <Link to={`/item/${id}`}>Details</Link>
