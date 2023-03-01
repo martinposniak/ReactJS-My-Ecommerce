@@ -1,0 +1,23 @@
+[
+    {
+       "id":1,
+       "nombre":"BABOLAT BOOST USA",
+       "precio":69000,
+       "img":"../assets/img/raqueta-babolat-boost-usa-sin-background.png",
+       "stock":1
+    },
+    {
+       "id":2,
+       "nombre":"BABOLAT BOOST DRIVE",
+       "precio":79000,
+       "img":"../assets/img/raqueta-babolat-boost-drive-sin-background.png",
+       "stock":1
+    },
+    {
+       "id":3,
+       "nombre":"BABOLAT BOOST AERO DRIVE YELLOW",
+       "precio":89000,
+       "img":"../assets/img/raqueta-babolat-boost-aero-yellow-sin-background.png",
+       "stock":1
+    }
+ ]
