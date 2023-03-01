@@ -15,6 +15,7 @@ const ItemList = ({raquetas}) => {
             description={raqueta.description}
             price={raqueta.price}
             category={raqueta.category}
+            img={raqueta.img}
             />
         })}
     </div>

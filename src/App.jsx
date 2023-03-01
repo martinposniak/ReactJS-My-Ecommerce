@@ -12,7 +12,7 @@ const App = () => {
   return (
     <>
     <NavBar/>
-    <ItemListContainer greeting={"Bienvenidos a mi tienda virtual"}/>
+    <ItemListContainer />
     </>
   )
 }

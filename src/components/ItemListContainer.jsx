@@ -4,6 +4,7 @@ import data from '../data.json'
 
 
 const ItemListContainer = () => {
+  const category= "tennis"
   const catFilter = data.filter((raqueta) => raqueta.category === category);
   return (
     <div>
