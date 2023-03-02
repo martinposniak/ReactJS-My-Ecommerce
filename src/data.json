@@ -3,7 +3,7 @@
        "id":1,
        "name":"BABOLAT BOOST USA",
        "price":69000,
-       "img":"../assets/img/raqueta-babolat-boost-usa-sin-background.png",
+       "img":"/assets/img/raqueta-babolat-boost-usa-sin-background.png",
        "stock":1,
        "category": "tennis"
     },
@@ -11,7 +11,7 @@
        "id":2,
        "name":"BABOLAT BOOST DRIVE",
        "price":79000,
-       "img":"../assets/img/raqueta-babolat-boost-drive-sin-background.png",
+       "img":"/assets/img/raqueta-babolat-boost-drive-sin-background.png",
        "stock":1,
        "category": "tennis"
     },
@@ -19,7 +19,7 @@
        "id":3,
        "name":"BABOLAT BOOST AERO DRIVE YELLOW",
        "price":89000,
-       "img":"../assets/img/raqueta-babolat-boost-aero-yellow-sin-background.png",
+       "img":"/assets/img/raqueta-babolat-boost-aero-yellow-sin-background.png",
        "stock":1,
        "category": "tennis"
     }

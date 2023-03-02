@@ -8,7 +8,7 @@ const Item = ({id, img, name, category, price, stock}) => {
     <div>
         <div key={id}>
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={raqueta} />
+      <Card.Img variant="top" src={data} />
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text>
