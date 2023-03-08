@@ -32,9 +32,10 @@ const Footer = () => {
         <section className='email'>
           <ul>
             <li>
-              <img src={email} alt="email icono" /> martin.posniak@hotmail.com
+              <img src={email} alt="email icono" />
             <button className='emailBoton'
             onClick={() => (window.location = "mailto:martin.posniak@hotmail.com")}>
+              martin.posniak@hotmail.com
           </button>
             </li>
           </ul>

@@ -19,7 +19,7 @@ import { useContext, useState } from "react";
 import { GrFormAdd } from 'react-icons/gr';
 import { GrFormSubtract } from 'react-icons/gr';
 
-const ItemCount = ({ sotck, id, price, name }) => {
+const ItemCount = ({ stock, id, price, name }) => {
   const [count, setCount] = useState(1);
 
   const addQty = () => {
@@ -34,7 +34,7 @@ const ItemCount = ({ sotck, id, price, name }) => {
   return (
     <>
     <div>
-        <Button disabled variant="primary" size="sm">
+        <Button variant="primary" size="sm">
           {count <= 1 ?(
             <GrFormSubtract />
           ) : (

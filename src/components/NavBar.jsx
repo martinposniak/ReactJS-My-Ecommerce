@@ -21,7 +21,7 @@ function NavBarMatchPointPalermo() {
               </NavDropdown.Item>
               <NavDropdown.Item href={`/category/${"balls"}`}>Pelotas</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="/About">Contacto</Nav.Link>
+            <Nav.Link href="/Contact">Contacto</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

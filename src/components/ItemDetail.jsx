@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import ItemCount from "./ItemCount";
+import { Card } from "react-bootstrap"
 
 const ItemDetail = ({ data }) => {
 
