@@ -6,4 +6,148 @@
     font-size: 1.3rem;
 }
 
+/**Acá voy a editar el componente Welcome.jsx**/
+.welcome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.samprasFoto{
+    width: 28.125rem;
+    height: 43.8125rem;
+}
+.matchPointTitulo{
+    margin-top: 2rem;
+}
 
+/****************************************/
+
+/**Acá voy a editar el componente Footer.jsx**/
+footer {
+    width: 100%;
+    color: white;
+    background-color: #0d6efd;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: "whatsapp email redesSociales";
+  }
+
+footer .whatsapp{
+    box-sizing: border-box;
+    grid-area: whatsapp;
+}
+
+footer ul li{
+    list-style: none;
+}
+.whatsapp ul li a{
+    font-size: 1rem;
+}
+.whatsapp ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+footer .email{
+    box-sizing: border-box;
+    grid-area: email;
+}
+
+.email ul li {
+    color: white;
+    font-size: 1rem;
+}
+
+.emailBoton{
+    border: none;
+    background-color: #0d6efd;
+}
+
+footer .redesSociales{
+    box-sizing: border-box;
+    grid-area: redesSociales;
+}
+
+
+/*
+.whatsapp{
+    margin-top: 0.9rem;
+}
+
+.whatsapp ul li{
+    list-style: none;
+}
+
+.whatsapp ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.whatsapp ul li a:hover{
+    color: rgb(216, 219, 224);
+    transition: 1s 1s;
+}
+
+.email{
+    margin-top: 1rem;
+}
+.emailBoton{
+    border: none;
+    background-color: #0d6efd;
+}
+
+.email ul li {
+    color: white;
+    font-size: 1rem;
+    list-style: none;
+}
+*/
+
+/*******************************************/
+.productoCard {
+    display: flex;
+    flex-direction:row;
+}
+.cardContainer{
+    /*width: 10rem;*/
+    height: 40rem;
+}
+/*
+.cardImage{
+    width: 7.5625rem;
+    height: 17.5625rem;
+}
+*/
+.cardTitulo{
+    font-size: 0.8rem;
+}
+
+.cardCategory{
+    font-size: 0.8rem;
+}
+
+.cardPrice{
+    font-size: 0.8rem;
+}
+
+.cardStock{
+    font-size: 0.8rem;
+}
+
+
+
+.cardDetails{
+    text-decoration: none;
+    color: white;
+    transition: background-color 300ms 2ms; /*el primer parametro (150 minisegundos) es el tiempo que que va a tardar en hacer la transición, y el segundo parametro (2 minisegundos) es el delay, es decir, cuando quiero que arranque la transición o animación.*/
+}
+
+.cardDetails:hover{
+    color: white;
+}
+
+.cartIcono{
+    color: black;
+}

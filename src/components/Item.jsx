@@ -7,21 +7,21 @@ const Item = ({id, img, name, category, price, stock}) => {
   return (
     <div>
         <div key={id}>
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={data} />
+    <Card className='cardContainer'>
+      <Card.Img className='cardImage' variant="top" src={img} />
       <Card.Body>
-        <Card.Title>{name}</Card.Title>
-        <Card.Text>
+        <Card.Title className='cardTitulo'>{name}</Card.Title>
+        <Card.Text className='cardCategory'>
             Category: {category}
         </Card.Text>
-        <Card.Text>
-            Precio: {price}
+        <Card.Text className='cardPrice'>
+            Precio: {price + ".-"}
         </Card.Text>
-        <Card.Text>
+        <Card.Text className='cardStock'>
             Stock: {stock}
         </Card.Text>
-        <Button variant="primary">
-            <Link to={`/item/${id}`}>Details</Link>
+        <Button className='cardButton' variant="primary">
+            <Card.Link className='cardDetails' to={`/item/${id}`}>Details</Card.Link>
         </Button>
       </Card.Body>
     </Card>
@@ -31,3 +31,12 @@ const Item = ({id, img, name, category, price, stock}) => {
 }
 
 export default Item;
+
+/*
+async function fetchAPI() {
+  const response = await fetch('https://api.coder.com.ar/user/1234');
+  const datos = await response.json();
+}
+
+fetchAPI();
+*/

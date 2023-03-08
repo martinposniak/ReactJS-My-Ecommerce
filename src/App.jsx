@@ -1,21 +1,33 @@
 //import { useState } from 'react'
 //import reactLogo from './assets/react.svg'
 //import './App.css'
-import ItemListContainer from './components/ItemListContainer';
+// El hook 'useParams' me permite acceder a parametros de la URL
+
 import NavBar from './components/NavBar';
-
-
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Footer from './components/Footer';
+import Welcome from './components/Welcome';
+import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 
 const App = () => {
   return (
-    <>
+    <BrowserRouter>
     <NavBar/>
-    <ItemListContainer />
-    </>
-  )
-}
+
+    <Routes>
+      <Route exact path='/' element={<Welcome />} />
+      <Route exact path='/catalogue' element={<ItemListContainer />} />
+      <Route exact path='/category/:category' element={<ItemListContainer />} />
+      <Route exact path='/item/:id' element={<ItemDetailContainer />} />
+
+    </Routes>
+
+    <Footer />
+    </BrowserRouter>
+  );
+};
 
 export default App
 
