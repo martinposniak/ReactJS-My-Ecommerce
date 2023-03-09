@@ -107,22 +107,31 @@ footer .redesSociales{
 */
 
 /*******************************************/
+
+.itemListContainer{
+display: flex;
+flex-direction: row;
+}
 .productoCard {
-    display: flex;
-    flex-direction:row;
+display: flex;
+flex-wrap: wrap;
 }
-.cardContainer{
-    /*width: 10rem;*/
-    height: 40rem;
+
+/*
+.cardContainer{ 
 }
+*/
+
 /*
 .cardImage{
     width: 7.5625rem;
     height: 17.5625rem;
 }
 */
+
 .cardTitulo{
     font-size: 0.8rem;
+    
 }
 
 .cardCategory{
@@ -137,7 +146,9 @@ footer .redesSociales{
     font-size: 0.8rem;
 }
 
-
+.cardButton{
+    display: flex;
+}
 
 .cardDetails{
     text-decoration: none;
@@ -160,12 +171,46 @@ footer .redesSociales{
 .itemContainer{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    height: 40rem;
-    border-radius: 1rem solid black;
+    margin-left: 21rem;
+    width: 17rem;
+}
+/*
+.itemImage{
+}
+*/
+
+
+/*****Acá comienza la edición de Contact.jsx*****/
+
+.contacto{
+    background-image: url(/assets/img/tennis-court-dimensions.jpg);
+    background-position: 50%;
+    background-size: cover;
 }
 
-.itemImage{
-    width: 7.5625rem;
-    height: 17.5625rem;
+.contactoContainer{
+    display: block;
+    width: 100%;
+    margin-left: 2.5rem;
+}
+
+.contactoContainerDos{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.containerFormulario{
+
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.completar{
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.enviarDatos{
+    border-radius: 1rem;
+    width: 5rem;
 }

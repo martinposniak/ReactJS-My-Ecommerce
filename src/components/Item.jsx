@@ -8,11 +8,11 @@ const Item = ({id, img, name, category, price, stock}) => {
   return (
     <div>
         <div key={id}>
-    <Card className='cardContainer'>
+    <Card className='cardContainer' style={{ width: '20rem' }}>
       <Card.Img className='cardImage' variant="top" src={img} />
       <Card.Body>
         <Card.Title className='cardTitulo'>{name}</Card.Title>
-        <Card.Text className='cardCategory'>
+        {/*<Card.Text className='cardCategory'>
             Category: {category}
         </Card.Text>
         <Card.Text className='cardPrice'>
@@ -20,7 +20,7 @@ const Item = ({id, img, name, category, price, stock}) => {
         </Card.Text>
         <Card.Text className='cardStock'>
             Stock: {stock}
-        </Card.Text>
+  </Card.Text>*/}
         <Button className='cardButton' variant="primary">
             <Link className='cardDetails' to={`/item/${id}`}>Details</Link>
         </Button>
