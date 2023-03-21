@@ -110,11 +110,17 @@ footer .redesSociales{
 
 .itemListContainer{
 display: flex;
-flex-direction: row;
+flex-direction: column;
 }
 .productoCard {
 display: flex;
 flex-wrap: wrap;
+}
+
+.tennisLoader {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 /*
@@ -213,4 +219,42 @@ flex-wrap: wrap;
 .enviarDatos{
     border-radius: 1rem;
     width: 5rem;
+}
+
+/******ACÁ COMIENZA LA EDICIÓN DE ITEMCOUNT.JSX********/
+.div-contador{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boton-contador{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1rem;
+    background-color: #0d6efd;
+}
+
+.boton-compra{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.boton-compra button {
+    width: 7rem;
+    border-radius: 1rem;
+}
+
+.cantidad_items{
+    background-color: #f04040;
+    border-radius: 50%;
+    width: 1.5625rem;
+    height: 1.5625rem;
+    position: relative;
+    bottom: 1.25rem;
+    right: 0.625rem;
+    text-align: center;
+    font-weight: 600;
+    color: #fff;
 }
