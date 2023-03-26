@@ -1,8 +1,13 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import { collection, Firestore, getDocs, getFirestore } from "firebase/firestore";
 import { useParams } from "react-router-dom";
 
+ // CREO EL CONTEXTO //
 export const CartContext = createContext([]);
+
+//CREO UNA FUNCIÓN QUE RETORNE EL CONTEXTO  PARA USARLO//
+export const UseCartContext = ()=> useContext(CartContext)  
+
 
 const ShoppingCartContext = ({ children }) => {
   const [ cart, setCart ] = useState([]);
@@ -92,6 +97,8 @@ const addItem = (quantity, id) => {
     setCartQty(total);
     addAmount(item.price, quantity);
 };
+
+
 
 return (
   <CartContext.Provider value={{ 

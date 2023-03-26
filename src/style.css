@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.3rem;
 }
 
@@ -110,11 +110,16 @@ footer .redesSociales{
 
 .itemListContainer{
 display: flex;
-flex-direction: column;
+flex-direction: row;
 }
+
+
 .productoCard {
 display: flex;
+flex-direction: row;
+justify-content: center;
 flex-wrap: wrap;
+gap: 1rem;
 }
 
 .tennisLoader {
@@ -123,10 +128,17 @@ flex-wrap: wrap;
     justify-content: center;
 }
 
-/*
-.cardContainer{ 
+
+.cardContainerPadre{
+    display: flex;
 }
-*/
+
+
+
+.cardContainerHijo{
+    display: flex;
+}
+
 
 /*
 .cardImage{
@@ -167,19 +179,39 @@ flex-wrap: wrap;
 }
 
 .cartIcono{
+    margin-top: 2rem;
+    margin-right: 1rem;
     color: black;
 }
 
+.cart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
 
+
+
+/*****Acá comienza la edición de ItemDetailContainer.jsx*****/
+
+
+.itemDetailContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
 /*****Acá comienza la edición de ItemDetail.jsx*****/
 
+/*
 .itemContainer{
     display: flex;
     flex-direction: column;
-    margin-left: 21rem;
     width: 17rem;
 }
+*/
 /*
 .itemImage{
 }
@@ -257,4 +289,211 @@ flex-wrap: wrap;
     text-align: center;
     font-weight: 600;
     color: #fff;
+}
+
+
+/*******Acá comienza la edición del componente NavBar.jsx*****/
+
+
+
+/*******Acá comienza la edición del componente Cart.jsx*****/
+
+.main_cart{
+    margin-top: 1rem;
+}
+
+.cart_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    width: 75vw;
+}
+
+.cart_title{
+    align-self: center;
+}
+.cart_img{
+    width: 7rem;
+}
+
+.tag_total_amount{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: #f04040;
+}
+
+.cart_body{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+}
+
+.cart_footer{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    border: none;
+}
+
+/*******Acá comienza la edición del componente CartWidget.jsx*****/
+
+
+
+/*******Acá comienza la edición del componente FormCart.jsx*****/
+
+.form_cart{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.form_cart form fieldset{
+    width: 25rem;
+    height: 35rem;
+    padding: 1rem;
+    border: solid;
+    border-radius: 1rem;    
+}
+
+
+
+#phone{
+    display: flex;
+    flex-direction: row;
+}
+
+.fijo{
+    padding-left: 2.5rem;
+}
+
+
+
+
+/*******Acá comienza la edición del componente Login.jsx*****/
+
+#mainLogin{
+    color:rgb(82, 82, 209) ;
+  }
+
+#pantalla-dividida{
+    display: flex;
+}
+
+.logIn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:flex-start;
+    width: 100vw;
+    height: 100vh;
+}
+
+.logIn form{   
+    margin-top: 3.5rem;
+}
+
+.input-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-box label {
+    line-height: 4rem;
+}
+
+.mensajeLog .logLink{
+    text-decoration: none;
+    line-height: 5rem;
+}
+
+
+#email-address{
+    border: none;
+    outline: none;
+    border-bottom: 0.1rem solid black;
+    line-height: 1.5rem;
+    border-color: rgb(82, 82, 209);
+}
+
+
+#password{
+    border: none;
+    outline: none;
+    border-bottom: 0.1rem solid black;
+    line-height: 1.5rem;
+    border-color: rgb(82, 82, 209);
+}
+
+#ingresar{
+    height: 2.5rem;
+    border-radius: 1rem;
+    background-color: rgb(82, 82, 209);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+#ingresar:hover{
+    background-color: rgb(14, 107, 194);
+    transition: background-color 150ms 2ms; /*el primer parametro (150 minisegundos) es el tiempo que que va a tardar en hacer la transición, y el segundo parametro (2 minisegundos) es el delay, es decir, cuando quiero que arranque la transición o animación.*/
+}
+
+.check-box {
+    margin-top: 1rem;
+    border-color: rgb(82, 82, 209);
+}
+
+
+/*******Acá comienza la edición del componente Signup.jsx*****/
+
+
+#mainRegister{
+    color:rgb(82, 82, 209) ;
+  }
+
+  .register{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:flex-start;
+    width: 100vw;
+    height: 100vh;
+}
+
+.register form{   
+    margin-top: 3.5rem;
+}
+
+.mensajeReg .signLink{
+    text-decoration: none;
+    line-height: 5rem;
+}
+
+
+/*******Acá comienza la edición del componente home.jsx*****/
+
+.logout{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #0d6efd;
+    margin-right: 3rem;
+}
+
+.logoutButton{
+    margin-bottom: 1rem;
+    background-color: #0d6efd;
+    border-radius: 1rem;
+    width: 3rem;
+    height: 3rem;
+    border: none;
 }

@@ -14,7 +14,6 @@ const ItemListContainer = () => {
 
 
    useEffect(()=>{
-    console.log(isLoading);
     const db = getFirestore();
 
     const itemsCollection = collection(db, "tenis");
@@ -23,7 +22,6 @@ const ItemListContainer = () => {
         ...doc.data(),
         id: doc.id
       }));
-      console.log(docs);
       setProducts(docs);
       setIsLoading(false);
       

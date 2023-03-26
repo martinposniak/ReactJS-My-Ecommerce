@@ -16,10 +16,10 @@ const Cart = () => {
  if (cart.length === 0) {
   return (
     <>
-      <div className="cart_">
+      <div className="cart">
         <h2>El carrito esta vacio..</h2>
         <Link to={"/catalogue"}>
-          <Button colorScheme="red">Ir al catálogo</Button>
+          <Button>Ir al catálogo</Button>
         </Link>
       </div>
     </>
@@ -33,25 +33,24 @@ const Cart = () => {
         return(
           <div key={item.id} className="cart_container">
             <Card className="cards">
-              <Card.Img src={item.img} alt="imagen_producto" />
-              <Card.Title>{item.name}</Card.Title>
-              <CardBody>
+              <Card.Img className="cart_img" src={item.img} alt="imagen_producto" />
+              <Card.Title className="cart_title">{item.name}</Card.Title>
+              <Card.Body className="cart_body">
                 <Card.Text as="b">Cantidad: {item.quantity}</Card.Text>
                 <Card.Text>Subtotal: {currencyFormat(item.price * item.quantity)}.-</Card.Text>
-              </CardBody>
-              <Footer>
-                <Button
-                  colorScheme="red"
+              </Card.Body>
+              <Card.Footer className="cart_footer">
+                <Button className="cart_remove"
                   onClick={() => removeProduct(item.id)}
                 >
-                  X
+                  Eliminar
                 </Button>
-              </Footer>
+              </Card.Footer>
             </Card>
           </div>
         );
       })}
-      <div className="tag_total_amount">Total: {currencyFormat(totalAmount)}.-</div>
+      <div className="tag_total_amount"><h2>Total: {currencyFormat(totalAmount)}.-</h2></div>
       <FormCart />
     </div>
   )

@@ -1,27 +1,16 @@
 // El ItemCount va adentro del ItemDetail.jsx
 
-// import { useState, useContext } from 'react';
-/*
-const ItemCount = ({ stock, id, price, name }) => {
-    const [cart, setCart] = 
-  return (
-    <>
-
-    </>
-  )
-}
-
-export default ItemCount
-*/
-
 import Button from 'react-bootstrap/Button';
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Swal from 'sweetalert2';
+import { CartContext } from '../context/ShoppingCartContext';
 
 
 
-const ItemCount = ({ stock, onAdd, id }) => {
+const ItemCount = ({ stock, id }) => {
   const [quanti, setQuanti] = useState(1);
+  const {addItem, cart} = useContext(CartContext)
+
 
   const addQty = () => {
     if (quanti < stock) {
@@ -45,6 +34,15 @@ const ItemCount = ({ stock, onAdd, id }) => {
     }
   };
 
+  const agregarAlCarrito = () => {
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Agregado al carrito',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
 
   return (
     <>
@@ -55,7 +53,7 @@ const ItemCount = ({ stock, onAdd, id }) => {
         <Button className="boton-contador" onClick={addQty}><i className="bi bi-plus-square"></i></Button>
       </div>
       <div className="boton-compra">
-        <Button onClick={()=> onAdd(quanti, id)}>Agregar al carrito: {quanti}</Button>
+        <Button onClick={()=> {addItem(quanti, id); agregarAlCarrito()}}>Agregar al carrito: {quanti}</Button>
       </div>
     </div>
     </>
@@ -65,27 +63,3 @@ const ItemCount = ({ stock, onAdd, id }) => {
 export default ItemCount
 
 
-/*
-<ButtonGroup>
-<Button variant="primary" size="sm">
-  {count <= 1 ?(
-    <GrFormSubtract />
-    
-  ) : (
-    <Button onClick={substractQty}><GrFormSubtract /></Button>
-  )}
-</Button>
-<Link to={'/cart'}>
-<Button onClick={() => addToCart()} variant="primary" size="sm">
-  Add to Cart: {count}
-</Button>
-</Link>
-{count < stock ? (
-<Button onClick={addQty}>
-    <GrFormAdd />
-    </Button>
-  ) : (
-    <Button><GrFormAdd /></Button>
-  )}
-</ButtonGroup>
-*/

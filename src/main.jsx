@@ -1,8 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './style.css'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './style.css';
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB9As_oHZYsSShfNriuEP9nsLSpnqn5y2o",
@@ -13,7 +14,13 @@ const firebaseConfig = {
   appId: "1:442575557808:web:b9161b6c6b6482d1f95775"
 };
 
-initializeApp(firebaseConfig);
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+// Initialize Firebase Authentication and get a reference to the service
+export const auth = getAuth(app);
+export default app;
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
