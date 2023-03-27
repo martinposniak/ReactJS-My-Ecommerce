@@ -5,6 +5,7 @@ import FormCart from "./FormCart";
 import { useContext } from "react";
 import { CartContext } from "../context/ShoppingCartContext";
 
+
 const Cart = () => {
   const { cart, totalAmount, removeProduct } = useContext(CartContext);
 

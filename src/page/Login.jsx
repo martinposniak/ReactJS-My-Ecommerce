@@ -19,9 +19,9 @@ const Login = () => {
         const user = userCredential.user;
         navigate("/");
         Swal.fire({
-            position: 'center-center',
+            position: 'center',
             icon: 'success',
-            title: 'Muchas gracias ' + user.email + '!' + ' ya puedes iniciar sesión',
+            title: 'Muchas gracias ' + user.email + '!' + ' ya has iniciado sesión',
             showConfirmButton: false,
             timer: 2500
           })

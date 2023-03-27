@@ -4,8 +4,10 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
+
 const Item = ({id, img, name }) => {
   return (
+    <>
     <div className='cardContainerPadre'>
       <div className='cardContainerHijo' key={id}>
     <Card style={{ width: '20rem' }}>
@@ -19,6 +21,7 @@ const Item = ({id, img, name }) => {
     </Card>
     </div>
     </div>
+    </>
   );
 }
 

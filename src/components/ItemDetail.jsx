@@ -4,6 +4,7 @@ import { Card } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 
+
 const ItemDetail = ({ data }) => {
 
   const { id } = useParams();

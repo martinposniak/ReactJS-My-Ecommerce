@@ -13,7 +13,7 @@ const Logout = () => {
     signOut(auth)
       .then(() => {
         // Sign-out successful.
-        navigate("/login");
+        navigate("/signup");
         Swal.fire({
             position: 'center-center',
             icon: 'success',
