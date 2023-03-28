@@ -1,6 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { collection, Firestore, getDocs, getFirestore } from "firebase/firestore";
-import { useParams } from "react-router-dom";
 
  // CREO EL CONTEXTO //
 export const CartContext = createContext([]);
@@ -13,8 +12,8 @@ const ShoppingCartContext = ({ children }) => {
   const [ cart, setCart ] = useState([]);
   const [ cartQty, setCartQty ] = useState(0);
   const [ totalAmount, setTotalAmount ] = useState(0);
-  const [ products, setProducts ] = useState([])
-  const [isLoading, setIsLoading] = useState(true);
+  const [ products, setProducts ] = useState([]);
+  const [isLogged, setIsLogged]= useState(false);
 
   useEffect(() => {
     const db = getFirestore();
@@ -110,7 +109,10 @@ return (
       setCart,
       cartQty,
       totalAmount,
-      addAmount}}>
+      addAmount,
+      isLogged,
+      setIsLogged
+      }}>
   { children }
   </CartContext.Provider>
 );

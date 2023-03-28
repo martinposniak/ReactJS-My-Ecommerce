@@ -3,6 +3,8 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../main";
 import { NavLink, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
+import { useContext } from "react";
+import { CartContext } from '../context/ShoppingCartContext';
 import canchaDeTenis from "/assets/img/tennis-court-dimensions-2.jpg";
 
 const Login = () => {
@@ -10,6 +12,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const {setIsLogged} = useContext(CartContext)
 
   const onLogin = (e) => {
     e.preventDefault();
@@ -17,6 +20,7 @@ const Login = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
+        setIsLogged(true)
         navigate("/");
         Swal.fire({
             position: 'center',

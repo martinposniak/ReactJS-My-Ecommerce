@@ -4,10 +4,14 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from './CartWidget';
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from '../context/ShoppingCartContext';
 import Logout from '../page/Logout';
+import { FiUser } from 'react-icons/fi';
 
 
 function NavBarMatchPointPalermo() {
+  const {isLogged} = useContext(CartContext)
   return (
     <Navbar bg="primary" expand="lg">
       <Container>
@@ -27,7 +31,9 @@ function NavBarMatchPointPalermo() {
           </Nav>
         </Navbar.Collapse>
       </Container>
-      <Logout />
+      {/*Acá lo que hice fue un condicional, donde diga que si está logueado que muestre el cerrar sesión, sino que muestre iniciar sesión
+*/}
+      {isLogged ? <Logout /> : <Nav.Link className='logInButton' as={Link} to={"/login"}><FiUser size="3rem"/><h6>Iniciar sesión</h6></Nav.Link>}
       <CartWidget/>
     </Navbar>
   );

@@ -5,7 +5,7 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Contact from "./components/Contact";
 import Cart from "./components/Cart";
-import ShoppingCartProvider from './context/ShoppingCartContext';
+import ShoppingCartContext from './context/ShoppingCartContext';
 import Welcome from './components/Welcome';
 import Login from './page/Login';
 import Signup from './page/Signup';
@@ -14,7 +14,7 @@ import Logout from './page/Logout';
 
 const App = () => {
   return (
-    <ShoppingCartProvider>
+    <ShoppingCartContext>
     <BrowserRouter>
     <NavBarMatchPointPalermo/>
 
@@ -34,7 +34,7 @@ const App = () => {
 
     <Footer />
     </BrowserRouter>
-    </ShoppingCartProvider>
+    </ShoppingCartContext>
   );
 };
 
