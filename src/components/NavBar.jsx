@@ -11,7 +11,7 @@ import { FiUser } from 'react-icons/fi';
 
 
 function NavBarMatchPointPalermo() {
-  const {isLogged} = useContext(CartContext)
+  const {isLogged, isNotLogged} = useContext(CartContext)
   return (
     <Navbar bg="primary" expand="lg">
       <Container>
