@@ -9,7 +9,7 @@ import { CartContext } from '../context/ShoppingCartContext';
 const ItemCount = ({ stock, id }) => {
   const [quanti, setQuanti] = useState(1);
   const {addItem, cart} = useContext(CartContext)
-  const {isLogged} = useContext(CartContext);
+
 
  
   
@@ -41,7 +41,6 @@ const ItemCount = ({ stock, id }) => {
 
 
   const agregarAlCarrito = () => {
-    if(isLogged) {
       Swal.fire({
         position: 'center',
         icon: 'success',
@@ -49,14 +48,6 @@ const ItemCount = ({ stock, id }) => {
         showConfirmButton: false,
         timer: 1500
       })
-    } else {
-      Swal.fire({
-        icon: 'warning',
-        title: 'Oops...',
-        text: 'Debes iniciar sesión para poder agregar productos al carrito de compras',
-         footer: 'Si aún no tienes cuenta, haz click <a href="/signup"><h6>Aquí</h6></a>'
-      })
-    }
   }
 
 

@@ -5,11 +5,14 @@ import { collection, Firestore, getDocs, getFirestore } from "firebase/firestore
 export const CartContext = createContext([]);
 
 //CREO UNA FUNCIÓN QUE RETORNE EL CONTEXTO  PARA USARLO//
-export const UseCartContext = ()=> useContext(CartContext)  
+export const UseCartContext = ()=> useContext(CartContext)
 
+let carrito = [];
+
+const productosLocalStorage = JSON.parse(localStorage.getItem('carrito') || '[]')
 
 const ShoppingCartContext = ({ children }) => {
-  const [ cart, setCart ] = useState([]);
+  const [ cart, setCart ] = useState(productosLocalStorage);
   const [ cartQty, setCartQty ] = useState(0);
   const [ totalAmount, setTotalAmount ] = useState(0);
   const [ products, setProducts ] = useState([]);
@@ -27,7 +30,13 @@ const ShoppingCartContext = ({ children }) => {
     })
   },[])
 
-  const cleanCart = () => setCart([]);
+  useEffect(()=>{
+    localStorage.setItem('carrrito', JSON.stringify(cart))
+  },[cart])
+
+  console.log(cart);
+
+  const cleanCart = () => {setCart([]); setCartQty(0)}
     
   const findProduct = (id, array) => array.find(product => product.id === id);
   // const findItemInCart = (id) => cart.find(item => item.id === id);
