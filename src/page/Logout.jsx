@@ -19,7 +19,7 @@ const Logout = () => {
         setIsLogged(false);
         navigate("/signup");
         Swal.fire({
-            position: 'center-center',
+            position: 'center',
             icon: 'success',
             title: 'Has cerrado sesión correctamente',
             showConfirmButton: false,

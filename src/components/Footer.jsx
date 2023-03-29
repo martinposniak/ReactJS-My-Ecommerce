@@ -6,17 +6,6 @@ import facebook2 from '/assets/img/facebook2-blanco.png'
 import twitter2 from '/assets/img/twitter.png'
 
 const Footer = () => {
-  const instagram = () => {
-    window.location.href = "https://www.instagram.com";
-  };
-
-  const facebook = () => {
-    window.location.href = "https://www.facebook.com";
-  };
-
-  const twitter = () => {
-    window.location.href = "https://www.twitter.com";
-  };
   return (
     <div>
       <footer>
