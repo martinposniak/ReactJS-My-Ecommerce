@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const Item = ({id, img, name }) => {
   return (
     <>
-    <div className='cardContainerPadre'>
+  <div className='cardContainerPadre'>
       <div className='cardContainerHijo' key={id}>
     <Card style={{ width: '20rem' }}>
       <Card.Img className='cardImage' variant="top" src={img} />
@@ -19,8 +19,8 @@ const Item = ({id, img, name }) => {
         </Button>
       </Card.Body>
     </Card>
-    </div>
-    </div>
+      </div>
+  </div>
     </>
   );
 }

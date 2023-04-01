@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../main";
 import canchaDeTenis from "/assets/img/tennis-court-dimensions-2.jpg";
+import Swal from 'sweetalert2';
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -18,8 +19,14 @@ const Signup = () => {
         // Signed in
         const user = userCredential.user;
         console.log(user);
-        navigate("/home");
-        // ...
+        navigate("/login");
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Te has registrado correctamente',
+          showConfirmButton: false,
+          timer: 2500
+        })
       })
       .catch((error) => {
         const errorCode = error.code;

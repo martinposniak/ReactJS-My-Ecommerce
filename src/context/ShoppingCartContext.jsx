@@ -7,12 +7,23 @@ export const CartContext = createContext([]);
 //CREO UNA FUNCIÓN QUE RETORNE EL CONTEXTO  PARA USARLO//
 export const UseCartContext = ()=> useContext(CartContext)
 
-let carrito = [];
+//let carrito = [];
 
-const productosLocalStorage = JSON.parse(localStorage.getItem('carrito') || '[]')
+//const productosLocalStorage = JSON.parse(localStorage.getItem('carrito') || '[]')
 
 const ShoppingCartContext = ({ children }) => {
-  const [ cart, setCart ] = useState(productosLocalStorage);
+
+    const productosLocalStorage = () => {
+        let carrito = localStorage.getItem("cart")
+        if(carrito) {
+            return JSON.parse(carrito)
+        }else{
+            return []
+        }
+    }
+
+
+  const [ cart, setCart ] = useState(productosLocalStorage());
   const [ cartQty, setCartQty ] = useState(0);
   const [ totalAmount, setTotalAmount ] = useState(0);
   const [ products, setProducts ] = useState([]);
@@ -31,12 +42,14 @@ const ShoppingCartContext = ({ children }) => {
   },[])
 
   useEffect(()=>{
-    localStorage.setItem('carrrito', JSON.stringify(cart))
+    localStorage.setItem("cart", JSON.stringify(cart))
   },[cart])
 
   console.log(cart);
 
-  const cleanCart = () => {setCart([]); setCartQty(0)}
+  //localStorage.clear(cart)
+
+  const cleanCart = () => {setCart([]); setCartQty(0); setTotalAmount(0)}
     
   const findProduct = (id, array) => array.find(product => product.id === id);
   // const findItemInCart = (id) => cart.find(item => item.id === id);

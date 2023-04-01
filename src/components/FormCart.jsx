@@ -5,37 +5,41 @@ import { collection, addDoc, getFirestore } from 'firebase/firestore';
 import { useState } from 'react';
 import { CartContext } from '../context/ShoppingCartContext';
 import { useContext } from "react";
+import { useNavigate } from 'react-router-dom';
 
 
 const FormCart = () => {
 
 
-
+  const navegar = useNavigate()
   const [orderId, setOrderId] = useState(null);
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const {isLogged, cleanCart, setCartQty} = useContext(CartContext);
+  const { isLogged, cleanCart, cart } = useContext(CartContext);
 
   const db = getFirestore();
 
   const comprarProd = (e) => {
     e.preventDefault();
     if (isLogged) {
-      addDoc(orderCollection, order).then(({id})=> {setOrderId(id); cleanCart(0)})
-      Swal.fire(
-        'Muchas gracias por tu compra!',
-        'Te enviaremos un mail a la brevedad',
-        'success'
-      )
+      addDoc(orderCollection, order).then(({id})=> {setOrderId(id)})
+      Swal.fire({
+        icon:'success',
+        title:'Muchas gracias por tu compra!',
+        text:`Tu numero de compra es "${orderId}"`,
+    })
     } else{
       Swal.fire({
         icon: 'warning',
         title: 'Oops...',
-        text: 'Debes iniciar sesión para poder agregar productos al carrito de compras',
-         footer: 'Si aún no tienes cuenta, haz click <a href="/signup"><h6>Aquí</h6></a>',
-         timer: 3000
+        text: 'Debes iniciar sesión para realizar la compra. Si aún no tienes cuenta, haz click en OK y registrate!',
+         timer: 10000
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navegar('/signup')
+      }
       })
     }
   }
@@ -44,7 +48,8 @@ const FormCart = () => {
     name,
     lastName,
     email,
-    phone
+    phone,
+    cart
   }
 
   const orderCollection = collection(db, "orden");
@@ -84,7 +89,7 @@ const FormCart = () => {
         <Button type="submit">Confirmar compra</Button>
       </fieldset>
     </Form>
-    <p>Nro. de orden: {orderId}</p>
+    <p>{orderId}</p>
     </div>
     </>
   )
