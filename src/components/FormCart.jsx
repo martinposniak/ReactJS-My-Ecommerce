@@ -16,6 +16,8 @@ const FormCart = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [emailRepeat, setEmailRepeat] = useState("");
+  const [country, setCountry] = useState("");
   const { isLogged, cleanCart, cart } = useContext(CartContext);
 
   const db = getFirestore();
@@ -23,35 +25,46 @@ const FormCart = () => {
   const comprarProd = (e) => {
     e.preventDefault();
     if (isLogged) {
-      addDoc(orderCollection, order).then(({id})=> {
+      if(email === emailRepeat){
+        addDoc(orderCollection, order).then(({id})=> {
 
+          Swal.fire({
+            icon:'success',
+            title:'Muchas gracias por tu compra!',
+            text:`Tu numero de compra es "${id}"`,
+          }).then(function(){
+            cleanCart()
+          })
+       })
+      }else{
         Swal.fire({
-          icon:'success',
-          title:'Muchas gracias por tu compra!',
-          text:`Tu numero de compra es "${id}"`,
-        }).then(function(){
-          cleanCart()
+          icon: 'error',
+          title: 'Los mails no coiniden',
+           timer: 10000
         })
-     })
-    } else{
-      Swal.fire({
-        icon: 'warning',
-        title: 'Oops...',
-        text: 'Debes iniciar sesión para realizar la compra. Si aún no tienes cuenta, haz click en OK y registrate!',
-         timer: 10000
-      }).then((result) => {
-        if (result.isConfirmed) {
-          navegar('/signup')
+       }
+      }else{
+        Swal.fire({
+          icon: 'warning',
+          title: 'Oops...',
+          text: 'Debes iniciar sesión para realizar la compra. Si aún no tienes cuenta, haz click en OK y registrate!',
+           timer: 10000
+        }).then((result) => {
+          if (result.isConfirmed) {
+            navegar('/signup')
+        }
+        })
       }
-      })
     }
-  }
+      
+
 
   const order = {
     name,
     lastName,
     email,
     phone,
+    country,
     cart
   }
 
@@ -72,7 +85,7 @@ const FormCart = () => {
         </Form.Group>
         <Form.Group className="mb-3">
         <Form.Label>País</Form.Label>
-        <Form.Select required> 
+        <Form.Select required onChange={(e) => setCountry(e.target.value)}> 
             <option value={""}>País</option>
             <option value={"Argentina"}>Argentina</option>
             <option value={"Brasil"}>Brasil</option>
@@ -87,7 +100,7 @@ const FormCart = () => {
         </Form.Group>
         <Form.Group className="mb-3">
         <Form.Label>Repetir Email</Form.Label>
-        <Form.Control onChange={(e) => setEmail(e.target.value)} placeholder="Email" type="email" required/>
+        <Form.Control onChange={(e) => setEmailRepeat(e.target.value)} placeholder="Email" type="email" required/>
         </Form.Group>
         <Form.Group className="mb-3">
         <Form.Label>Teléfono</Form.Label>
