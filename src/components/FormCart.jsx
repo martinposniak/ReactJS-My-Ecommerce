@@ -11,8 +11,7 @@ import { useNavigate } from 'react-router-dom';
 const FormCart = () => {
 
 
-  const navegar = useNavigate()
-  const [orderId, setOrderId] = useState(null);
+  const navegar = useNavigate();
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -24,12 +23,16 @@ const FormCart = () => {
   const comprarProd = (e) => {
     e.preventDefault();
     if (isLogged) {
-      addDoc(orderCollection, order).then(({id})=> {setOrderId(id)})
-      Swal.fire({
-        icon:'success',
-        title:'Muchas gracias por tu compra!',
-        text:`Tu numero de compra es "${orderId}"`,
-    })
+      addDoc(orderCollection, order).then(({id})=> {
+
+        Swal.fire({
+          icon:'success',
+          title:'Muchas gracias por tu compra!',
+          text:`Tu numero de compra es "${id}"`,
+        }).then(function(){
+          cleanCart()
+        })
+     })
     } else{
       Swal.fire({
         icon: 'warning',
@@ -83,13 +86,16 @@ const FormCart = () => {
         <Form.Control onChange={(e) => setEmail(e.target.value)} placeholder="Email" type="email" required/>
         </Form.Group>
         <Form.Group className="mb-3">
+        <Form.Label>Repetir Email</Form.Label>
+        <Form.Control onChange={(e) => setEmail(e.target.value)} placeholder="Email" type="email" required/>
+        </Form.Group>
+        <Form.Group className="mb-3">
         <Form.Label>Teléfono</Form.Label>
         <Form.Control onChange={(e) => setPhone(e.target.value)} placeholder="phone" type="number" required/>
         </Form.Group>
         <Button type="submit">Confirmar compra</Button>
       </fieldset>
     </Form>
-    <p>{orderId}</p>
     </div>
     </>
   )

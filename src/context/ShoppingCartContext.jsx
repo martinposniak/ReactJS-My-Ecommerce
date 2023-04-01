@@ -13,17 +13,9 @@ export const UseCartContext = ()=> useContext(CartContext)
 
 const ShoppingCartContext = ({ children }) => {
 
-    const productosLocalStorage = () => {
-        let carrito = localStorage.getItem("cart")
-        if(carrito) {
-            return JSON.parse(carrito)
-        }else{
-            return []
-        }
-    }
 
 
-  const [ cart, setCart ] = useState(productosLocalStorage());
+  const [ cart, setCart ] = useState([]);
   const [ cartQty, setCartQty ] = useState(0);
   const [ totalAmount, setTotalAmount ] = useState(0);
   const [ products, setProducts ] = useState([]);
@@ -41,13 +33,8 @@ const ShoppingCartContext = ({ children }) => {
     })
   },[])
 
-  useEffect(()=>{
-    localStorage.setItem("cart", JSON.stringify(cart))
-  },[cart])
 
-  console.log(cart);
 
-  //localStorage.clear(cart)
 
   const cleanCart = () => {setCart([]); setCartQty(0); setTotalAmount(0)}
     
