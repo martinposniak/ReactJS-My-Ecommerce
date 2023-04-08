@@ -1,6 +1,6 @@
 // El ItemList recibe esa información del ItemListContainer, como props(propiedades), y devuelve un map que contiene el Item
 
-import Item from "./item"
+import Item from "./Item"
 
 
 const ItemList = ({product}) => {
